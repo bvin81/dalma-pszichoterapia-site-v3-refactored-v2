@@ -906,38 +906,6 @@ function initServicesCardStack() {
     cardEls.push(el);
   }
 
-  const overlay = document.createElement('div');
-  overlay.className = 'svc-detail-overlay';
-  overlay.innerHTML = `
-    <img class="svc-detail-cover" src="" alt="">
-    <div class="svc-detail-body">
-      <h3 class="svc-detail-h3"></h3>
-      <p class="svc-detail-p"></p>
-      <a class="btn btn-secondary svc-detail-link" href="#" data-key="service_more">Bővebben</a>
-    </div>`;
-  wrapper.appendChild(overlay);
-
-  // Tap anywhere on overlay (except the Bővebben link) → close
-  overlay.addEventListener('click', (e) => {
-    if (e.target.closest('.svc-detail-link')) return;
-    overlay.classList.remove('open');
-  });
-
-  // Swipe on overlay → cycle cards without leaving detail view
-  let ovSx = 0, ovDx = 0, ovMoved = false;
-  overlay.addEventListener('touchstart', (e) => {
-    ovSx = e.touches[0].clientX; ovDx = 0; ovMoved = false;
-  }, { passive: true });
-  overlay.addEventListener('touchmove', (e) => {
-    ovDx = e.touches[0].clientX - ovSx;
-    if (Math.abs(ovDx) > 8) { ovMoved = true; e.preventDefault(); }
-  }, { passive: false });
-  overlay.addEventListener('touchend', () => {
-    if (ovMoved && Math.abs(ovDx) > 60) {
-      cycleOverlay(ovDx < 0 ? 1 : -1);
-    }
-  });
-
   const hint = document.createElement('p');
   hint.className = 'svc-swipe-hint';
   hint.dataset.key = 'svc_swipe_hint';
@@ -957,6 +925,7 @@ function initServicesCardStack() {
       <div class="svc-card-body">
         <h3 data-key="${s.titleKey}"></h3>
         <p data-key="${s.descKey}"></p>
+        <a href="${bp}${s.url}" class="btn btn-secondary svc-card-link" data-key="service_more">Bővebben</a>
       </div>`;
   }
 
@@ -980,35 +949,6 @@ function initServicesCardStack() {
     }
     if (cachedTranslations) updateDOM(cachedTranslations);
     bindTopCard();
-  }
-
-  function openDetail(svcIdx) {
-    const s = SERVICES[svcIdx];
-    overlay.querySelector('.svc-detail-cover').src = bp + s.img;
-    const h3 = overlay.querySelector('.svc-detail-h3');
-    const p  = overlay.querySelector('.svc-detail-p');
-    h3.dataset.key = s.titleKey;
-    p.dataset.key  = s.descKey;
-    overlay.querySelector('.svc-detail-link').href = bp + s.url;
-    if (cachedTranslations) updateDOM(cachedTranslations);
-    overlay.classList.add('open');
-  }
-
-  function cycleOverlay(dir) {
-    if (dir > 0) {
-      topIdx = (topIdx + 1) % N;
-      stackOrder = [...stackOrder.slice(1), stackOrder[0]];
-    } else {
-      topIdx = (topIdx - 1 + N) % N;
-      stackOrder = [stackOrder[STACK - 1], ...stackOrder.slice(0, STACK - 1)];
-    }
-    for (let sp = 0; sp < STACK; sp++) {
-      fillCard(stackOrder[sp], svcOf(sp));
-      placeCard(stackOrder[sp], sp, 0, 0, false);
-    }
-    if (cachedTranslations) updateDOM(cachedTranslations);
-    bindTopCard();
-    openDetail(svcOf(0));
   }
 
   function cycleForward(dir) {
@@ -1093,11 +1033,6 @@ function initServicesCardStack() {
         el.style.transition = 'transform 0.3s cubic-bezier(0.4,0,0.2,1)';
         el.style.transform = '';
       }
-    }, { signal });
-
-    // Tap opens detail (fires on both mobile tap and desktop click)
-    el.addEventListener('click', () => {
-      openDetail(parseInt(el.dataset.svcIdx));
     }, { signal });
   }
 

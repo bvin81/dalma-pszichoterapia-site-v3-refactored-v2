@@ -654,7 +654,7 @@ html {
   border-radius: var(--radius-card);
   box-shadow: 0 6px 24px rgba(0,0,0,0.13), 0 2px 8px rgba(0,0,0,0.07);
   overflow: hidden;
-  cursor: pointer;
+  cursor: default;
   will-change: transform, opacity;
   user-select: none;
   -webkit-user-select: none;
@@ -663,7 +663,7 @@ html {
 
 .svc-card img {
   width: 100%;
-  height: 150px;
+  height: 130px;
   object-fit: cover;
   display: block;
   pointer-events: none;
@@ -686,7 +686,7 @@ html {
   line-height: 1.6;
   margin: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
