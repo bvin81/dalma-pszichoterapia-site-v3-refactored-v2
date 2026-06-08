@@ -888,6 +888,7 @@ function initServicesCardStack() {
 
   let topIdx = 0;
   let animating = false;
+  let abortCtrl = null;
 
   // Fixed stack styles by position (tx = horizontal offset so corners poke out)
   const ST = [
@@ -939,6 +940,7 @@ function initServicesCardStack() {
 
   const hint = document.createElement('p');
   hint.className = 'svc-swipe-hint';
+  hint.dataset.key = 'svc_swipe_hint';
   hint.textContent = '← húzd el →';
   wrapper.parentNode.insertBefore(hint, wrapper.nextSibling);
 
@@ -1055,53 +1057,48 @@ function initServicesCardStack() {
   }
 
   function bindTopCard() {
-    const elIdx = stackOrder[0];
-    const orig  = cardEls[elIdx];
-    const fresh = orig.cloneNode(true);
-    orig.parentNode.replaceChild(fresh, orig);
-    cardEls[elIdx] = fresh;
+    // Abort previous listeners so old top card is no longer interactive
+    if (abortCtrl) abortCtrl.abort();
+    abortCtrl = new AbortController();
+    const { signal } = abortCtrl;
 
-    const el = cardEls[elIdx];
-    let sx = 0, sy = 0, dx = 0;
-    let dragging = false, moved = false;
-    let lastTouch = 0;
+    const el = cardEls[stackOrder[0]];
+    let startX = 0, startY = 0, dx = 0, swiping = false;
 
     el.addEventListener('touchstart', (e) => {
-      sx = e.touches[0].clientX;
-      sy = e.touches[0].clientY;
-      dx = 0; dragging = true; moved = false;
-    }, { passive: true });
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      dx = 0; swiping = false;
+    }, { passive: true, signal });
 
     el.addEventListener('touchmove', (e) => {
-      if (!dragging) return;
-      dx = e.touches[0].clientX - sx;
-      const dy = e.touches[0].clientY - sy;
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 6) {
+      dx = e.touches[0].clientX - startX;
+      const dy = e.touches[0].clientY - startY;
+      if (!swiping && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 12) {
+        swiping = true;
+      }
+      if (swiping) {
         e.preventDefault();
-        moved = true;
         el.style.transition = 'none';
         el.style.transform = `translateX(${dx}px) rotate(${dx * 0.07}deg)`;
       }
-    }, { passive: false });
+    }, { passive: false, signal });
 
-    el.addEventListener('touchend', () => {
-      dragging = false;
-      lastTouch = Date.now();
-      if (moved && Math.abs(dx) > 80) {
+    el.addEventListener('touchend', (e) => {
+      if (!swiping) return; // let click handle the tap
+      e.preventDefault();  // prevent ghost click after swipe
+      if (Math.abs(dx) > 80) {
         cycleForward(dx < 0 ? -1 : 1);
-      } else if (moved) {
-        el.style.transition = 'transform 0.3s cubic-bezier(0.4,0,0.2,1)';
-        el.style.transform = 'translateX(0) rotate(0deg)';
       } else {
-        openDetail(parseInt(el.dataset.svcIdx));
+        el.style.transition = 'transform 0.3s cubic-bezier(0.4,0,0.2,1)';
+        el.style.transform = '';
       }
-    });
+    }, { signal });
 
-    // Mouse click (desktop preview only; guard against touch-generated click)
+    // Tap opens detail (fires on both mobile tap and desktop click)
     el.addEventListener('click', () => {
-      if (Date.now() - lastTouch < 400) return;
       openDetail(parseInt(el.dataset.svcIdx));
-    });
+    }, { signal });
   }
 
   render();

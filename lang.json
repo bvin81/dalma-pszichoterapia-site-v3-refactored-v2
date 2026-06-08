@@ -79,6 +79,11 @@
     "ro": "Detalii",
     "en": "Learn more"
   },
+  "svc_swipe_hint": {
+    "hu": "← húzd el →",
+    "ro": "← trage →",
+    "en": "← swipe →"
+  },
   "contact_title": {
     "hu": "Kapcsolat",
     "ro": "Contact",
