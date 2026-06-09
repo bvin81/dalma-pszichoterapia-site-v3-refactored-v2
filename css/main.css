@@ -67,17 +67,6 @@ html {
   }
 }
 
-/* Focus visible for keyboard navigation */
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
-:focus-visible {
-  outline: 2px solid var(--accent-main);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
-
 /* Scroll-to-top button */
 .scroll-to-top {
   position: fixed;
@@ -155,55 +144,9 @@ html {
   opacity: 0.3;
 }
 
-/* Cookie notice (if needed in future) */
-.cookie-notice {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--bg-surface);
-  border-top: 1px solid var(--border-subtle);
-  padding: var(--spacing-md);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-  z-index: var(--z-modal);
-  transform: translateY(100%);
-  transition: transform var(--transition-smooth);
-}
-
-.cookie-notice.show {
-  transform: translateY(0);
-}
-
-.cookie-notice .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-  .cookie-notice .container {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
 /* =================================================================
    SZOLGÁLTATÁS OLDALAK KIEGÉSZÍTÉSEK
-   (Hozzáadandó a main.css végéhez, ha még nincs benne)
    ================================================================= */
-
-/* Szolgáltatás oldal padding */
-.service-detail {
-  padding: 3rem 0;
-}
-
-.service-detail h1 {
-  font-family: "Poppins", sans-serif;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
 
 /* Bal oldali szöveges tartalom formázása */
 .left p {
@@ -238,32 +181,6 @@ html {
   .two-columns {
     grid-template-columns: 1fr;
   }
-}
-
-/* =================================================================
-   FOOTER FEJLESZTŐI LINK
-   ================================================================= */
-
-.footer-credit {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-}
-
-.footer-credit:hover {
-  opacity: 1;
-}
-
-.footer-credit a {
-  color: var(--text-muted, #5C5F63);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-credit a:hover {
-  color: var(--accent-main, #819A88);
-  text-decoration: underline;
 }
 
 /* =================================================================

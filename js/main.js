@@ -48,9 +48,21 @@ const rafThrottle = (callback) => {
    GLOBAL STATE
 --------------------------------------------------- */
 let cachedTranslations = null;
+let cachedPosts = null;
 let currentLang = getCurrentLang();
 let allPosts = [];
 let currentCategory = 'all';
+
+const CATEGORY_NAMES = {
+  'all':           { hu: 'Összes',         ro: 'Toate',                en: 'All' },
+  'anxiety':       { hu: 'Szorongás',      ro: 'Anxietate',            en: 'Anxiety' },
+  'relationships': { hu: 'Kapcsolatok',    ro: 'Relații',              en: 'Relationships' },
+  'family':        { hu: 'Családterápia',  ro: 'Terapie de familie',   en: 'Family Therapy' },
+  'personal-growth':{ hu: 'Személyes fejlődés', ro: 'Dezvoltare personală', en: 'Personal Growth' }
+};
+
+const SVG_SUN = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1zm0 20c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1zM23 12c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zM5 12c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zm13.7 6.3c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-1.4 1.4zM6.7 7.7c-.4.4-1 .4-1.4 0L3.9 6.3c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4zm11 0c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0L15 7.7c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l1.3 1.4zm-11 9.6c.4.4.4 1 0 1.4l-1.4 1.4c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0z"/></svg>';
+const SVG_MOON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
 
 /* ---------------------------------------------------
    LANGUAGE MANAGEMENT
@@ -129,15 +141,14 @@ const mobileMenu = document.getElementById("mobileMenu");
 
 if (menuBtn && mobileMenu) {
   menuBtn.addEventListener("click", () => {
-    const isVisible = mobileMenu.style.display === "flex";
-    mobileMenu.style.display = isVisible ? "none" : "flex";
-    menuBtn.classList.toggle("active");
-    menuBtn.setAttribute('aria-expanded', !isVisible);
+    const isOpen = mobileMenu.classList.toggle("is-open");
+    menuBtn.classList.toggle("active", isOpen);
+    menuBtn.setAttribute('aria-expanded', isOpen);
   });
 
   mobileMenu.addEventListener("click", (e) => {
     if (e.target.tagName === 'A') {
-      mobileMenu.style.display = "none";
+      mobileMenu.classList.remove("is-open");
       menuBtn.classList.remove("active");
       menuBtn.setAttribute('aria-expanded', 'false');
     }
@@ -154,9 +165,7 @@ function initDarkMode() {
   const toggleBtn = document.createElement('button');
   toggleBtn.className = 'theme-toggle';
   toggleBtn.setAttribute('aria-label', 'Témaváltás');
-  toggleBtn.innerHTML = savedTheme === 'dark' 
-    ? '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1zm0 20c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1zM23 12c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zM5 12c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zm13.7 6.3c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-1.4 1.4zM6.7 7.7c-.4.4-1 .4-1.4 0L3.9 6.3c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4zm11 0c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0L15 7.7c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l1.3 1.4zm-11 9.6c.4.4.4 1 0 1.4l-1.4 1.4c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0z"/></svg>'
-    : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  toggleBtn.innerHTML = savedTheme === 'dark' ? SVG_SUN : SVG_MOON;
   
   document.body.appendChild(toggleBtn);
 
@@ -167,9 +176,7 @@ function initDarkMode() {
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     
-    toggleBtn.innerHTML = newTheme === 'dark'
-      ? '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1zm0 20c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1zM23 12c0 .6-.4 1-1 1h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zM5 12c0 .6-.4 1-1 1H2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1zm13.7 6.3c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-1.4 1.4zM6.7 7.7c-.4.4-1 .4-1.4 0L3.9 6.3c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4zm11 0c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0L15 7.7c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l1.3 1.4zm-11 9.6c.4.4.4 1 0 1.4l-1.4 1.4c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0z"/></svg>'
-      : '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    toggleBtn.innerHTML = newTheme === 'dark' ? SVG_SUN : SVG_MOON;
   });
 }
 
@@ -299,18 +306,21 @@ function updateDOM(data) {
 /* ---------------------------------------------------
    BLOG LIST
 --------------------------------------------------- */
-function loadBlogList() {
-  const container = document.getElementById("blogContainer");
-  if (!container) return;
-
-  const basePath = getBasePath();
-  const blogPath = basePath + "blog-posts.json";
-
-  fetch(blogPath)
+function fetchPosts(basePath) {
+  if (cachedPosts) return Promise.resolve(cachedPosts);
+  return fetch(basePath + "blog-posts.json")
     .then(res => {
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       return res.json();
     })
+    .then(posts => { cachedPosts = posts; return posts; });
+}
+
+function loadBlogList() {
+  const container = document.getElementById("blogContainer");
+  if (!container) return;
+
+  fetchPosts(getBasePath())
     .then(posts => {
       allPosts = posts;
       renderBlogPosts(posts);
@@ -407,23 +417,15 @@ function initCategoryFilter() {
   if (!searchContainer || document.getElementById('categoryFilter')) return;
 
   const categories = ['all', ...new Set(allPosts.map(post => post.category?.en).filter(Boolean))];
-  
+
   const filterBar = document.createElement('div');
   filterBar.className = 'category-filter';
   filterBar.id = 'categoryFilter';
-  
-  const categoryNames = {
-    'all': { hu: 'Összes', ro: 'Toate', en: 'All' },
-    'anxiety': { hu: 'Szorongás', ro: 'Anxietate', en: 'Anxiety' },
-    'relationships': { hu: 'Kapcsolatok', ro: 'Relații', en: 'Relationships' },
-    'family': { hu: 'Családterápia', ro: 'Terapie de familie', en: 'Family Therapy' },
-    'personal-growth': { hu: 'Személyes fejlődés', ro: 'Dezvoltare personală', en: 'Personal Growth' }
-  };
 
   categories.forEach(cat => {
     const btn = document.createElement('button');
     btn.className = cat === 'all' ? 'category-btn active' : 'category-btn';
-    btn.textContent = categoryNames[cat]?.[currentLang] || cat;
+    btn.textContent = CATEGORY_NAMES[cat]?.[currentLang] || cat;
     btn.dataset.category = cat;
     filterBar.appendChild(btn);
   });
@@ -454,20 +456,11 @@ function updateBlogSearchAndFilters() {
     searchInput.placeholder = cachedTranslations['blog_search_placeholder']?.[currentLang] || 'Keresés a blogban...';
   }
 
-  // Frissítjük a kategória gombok szövegét
   const categoryFilter = document.getElementById('categoryFilter');
   if (categoryFilter) {
-    const categoryNames = {
-      'all': { hu: 'Összes', ro: 'Toate', en: 'All' },
-      'anxiety': { hu: 'Szorongás', ro: 'Anxietate', en: 'Anxiety' },
-      'relationships': { hu: 'Kapcsolatok', ro: 'Relații', en: 'Relationships' },
-      'family': { hu: 'Családterápia', ro: 'Terapie de familie', en: 'Family Therapy' },
-      'personal-growth': { hu: 'Személyes fejlődés', ro: 'Dezvoltare personală', en: 'Personal Growth' }
-    };
-
     categoryFilter.querySelectorAll('.category-btn').forEach(btn => {
       const cat = btn.dataset.category;
-      btn.textContent = categoryNames[cat]?.[currentLang] || cat;
+      btn.textContent = CATEGORY_NAMES[cat]?.[currentLang] || cat;
     });
   }
 }
@@ -510,13 +503,8 @@ function loadBlogPost() {
   }
 
   const basePath = getBasePath();
-  const blogPath = basePath + "blog-posts.json";
 
-  fetch(blogPath)
-    .then(res => {
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-      return res.json();
-    })
+  fetchPosts(basePath)
     .then(posts => {
       const post = posts.find(p => p.id == id);
       

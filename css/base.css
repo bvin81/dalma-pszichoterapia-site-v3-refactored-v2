@@ -155,9 +155,14 @@ img[data-src].loaded {
 }
 
 /* Focus styles */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 :focus-visible {
   outline: 2px solid var(--accent-main);
   outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 /* Container */
