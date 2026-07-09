@@ -756,12 +756,12 @@ function initScrollReveal() {
    SERVICES BOOK
 --------------------------------------------------- */
 const SERVICES = [
-  { titleKey: 'service_psych_title',     descKey: 'service_psych_desc',     img: 'images/service-psychological.jpg', url: 'service/psychological.html' },
-  { titleKey: 'service_individual_title',descKey: 'service_individual_desc', img: 'images/service-individual.jpg',   url: 'service/individual.html' },
-  { titleKey: 'service_couples_title',   descKey: 'service_couples_desc',   img: 'images/service-couples.jpg',       url: 'service/couples.html' },
-  { titleKey: 'service_online_title',    descKey: 'service_online_desc',    img: 'images/service-online.jpg',        url: 'service/online-therapy.html' },
-  { titleKey: 'service_group_title',     descKey: 'service_group_desc',     img: 'images/service-group.jpg',         url: 'service/group-therapy.html' },
-  { titleKey: 'service_sindelar_title',  descKey: 'service_sindelar_desc',  img: 'images/service-sindelar.jpg',      url: 'service/sindelar-therapy.html' },
+  { titleKey: 'service_individual_title', descKey: 'service_individual_desc', img: 'images/service-individual.jpg',    url: 'service/individual.html' },
+  { titleKey: 'service_couples_title',    descKey: 'service_couples_desc',    img: 'images/service-couples.jpg',       url: 'service/couples.html' },
+  { titleKey: 'service_online_title',     descKey: 'service_online_desc',     img: 'images/service-online.jpg',        url: 'service/online-therapy.html' },
+  { titleKey: 'service_group_title',      descKey: 'service_group_desc',      img: 'images/service-group.jpg',         url: 'service/group-therapy.html' },
+  { titleKey: 'service_children_title',   descKey: 'service_children_desc',   img: 'images/service-psychological.jpg', url: 'service/children-groups.html' },
+  { titleKey: 'service_sindelar_title',   descKey: 'service_sindelar_desc',   img: 'images/service-sindelar.jpg',      url: 'service/sindelar-therapy.html' },
 ];
 
 function preloadServiceImages() {

@@ -29,6 +29,11 @@
     "ro": "Contact",
     "en": "Contact"
   },
+  "nav_periodic": {
+    "hu": "Időszakos csoportok",
+    "ro": "Grupuri periodice",
+    "en": "Temporary Groups"
+  },
   "hero_button": {
     "hu": "Kapcsolat",
     "ro": "Contact",
@@ -162,19 +167,19 @@
     "en": "Online therapy"
   },
   "service_online_p1": {
-    "hu": "Egyéni tanácsadást, egyéni pszichoterápiát vagy családterápiát egyaránt igénybe vehet online térben is vagy hibrid módban – időnként online, időnként fizikai jelenléttel.",
-    "ro": "Consilierea individuală, psihoterapia individuală sau terapia de familie pot fi accesate atât în format online, cât și în regim hibrid – uneori online, alteori cu prezență fizică.",
-    "en": "Individual counseling, individual psychotherapy, and family therapy are available both online and in a hybrid format – sometimes online, sometimes in person."
+    "hu": "Az egyéni terápia online formában is igénybe vehető. Ez a forma különösen előnyös lehet, ha külföldön él, sokat utazik, időbeosztása nehezen teszi lehetővé a személyes találkozásokat, vagy egyszerűen ezt a megoldást érzi kényelmesebbnek.<br><br>Lehetőség van hibrid együttműködésre is, amely során az ülések egy része személyesen, más része online valósul meg, igazodva az Ön élethelyzetéhez és lehetőségeihez.<br><br>A közös munka online térben is ugyanazokra az alapelvekre épül: biztonságos, elfogadó légkörben dolgozunk az Ön számára fontos kérdéseken, nehézségeken és célokon.",
+    "ro": "Terapia individuală este disponibilă și în format online. Această formă poate fi deosebit de avantajoasă dacă locuiți în străinătate, călătoriți des, programul dumneavoastră nu vă permite întâlnirile față în față sau pur și simplu considerați că această soluție este mai confortabilă.<br><br>Există, de asemenea, posibilitatea unei colaborări hibride, în cadrul căreia o parte din ședințe se desfășoară față în față, iar cealaltă parte online, adaptându-ne la situația dumneavoastră de viață și la posibilitățile dumneavoastră.<br><br>Colaborarea în mediul online se bazează pe aceleași principii: lucrăm într-o atmosferă sigură și primitoare asupra problemelor, dificultăților și obiectivelor importante pentru dumneavoastră.",
+    "en": "Individual therapy is also available online. This format can be particularly beneficial if you live abroad, travel frequently, have a schedule that makes in-person sessions difficult, or simply find this option more convenient.<br><br>A hybrid approach is also possible, in which some sessions take place in person and others online, tailored to your life situation and availability.<br><br>Our work together online is based on the same principles: we work in a safe, accepting environment on the issues, challenges, and goals that are important to you."
   },
   "service_online_duration": {
-    "hu": "50 perc/alkalom (egyéni), 90 perc/alkalom (családterápia)",
-    "ro": "50 de minute/ședință (individual) și 90 de minute/ședință (terapie de familie)",
-    "en": "50 minutes/session (individual), 90 minutes/session (family therapy)"
+    "hu": "50 perc/alkalom",
+    "ro": "50 de minute/ședință",
+    "en": "50 minutes/session"
   },
   "service_online_price": {
-    "hu": "180/alkalom (egyéni), 270 lej/alkalom (családterápia)",
-    "ro": "180 lei/ședință (individual), 270 lei/ședință (terapie de familie)",
-    "en": "180 RON/session (individual), 270 RON/session (family therapy)"
+    "hu": "200 lej/alkalom",
+    "ro": "200 lei/ședință",
+    "en": "200 lei/session"
   },
   "service_online_desc": {
     "hu": "Hatékony terápia otthonod kényelméből, videókonferencia platformon keresztül.",
@@ -182,19 +187,19 @@
     "en": "Effective therapy from the comfort of your home, via video conferencing platform."
   },
   "service_sindelar_meta": {
-    "hu": "Tanulási zavar prevenció – Dr. Jánosi Dalma",
-    "ro": "Prevenirea tulburărilor de învățare – Dr. Jánosi Dalma",
-    "en": "Learning disorder prevention – Dr. Dalma Jánosi"
+    "hu": "Tanulási nehézségek felmérése és prevenciója – Dr. Jánosi Dalma",
+    "ro": "Evaluarea și prevenirea dificultăților de învățare – Dr. Jánosi Dalma",
+    "en": "Assessment and Prevention of Learning Difficulties – Dr. Dalma Jánosi"
   },
   "service_sindelar_title": {
-    "hu": "Tanulási zavar prevenció",
-    "ro": "Prevenirea tulburărilor de învățare",
-    "en": "Learning disorder prevention"
+    "hu": "Tanulási nehézségek felmérése és prevenciója",
+    "ro": "Evaluarea și prevenirea dificultăților de învățare",
+    "en": "Assessment and Prevention of Learning Difficulties"
   },
   "service_sindelar_p1": {
-    "hu": "Ha gyermekénél tanulási nehézség merül fel, érdemes felmérni, nincs-e valamilyen részképesség zavar vagy lemaradás a hátterében. Ehhez tudok segítséget nyújtani egyrészt a felmérésben, másrészt egy komplex fejlesztőprogram kijelölésében, melyet a gyermek otthon a szülővel minden nap gyakorolhat. A programot iskoláskorú gyermekeknek ajánlom, csak olyan gyermek számára, aki már jól ismeri a betűket (nagyjából második osztály második felétől). Ha a gyermeke nehezen követi az órák menetét, nehezen megy a hangos olvasás, írás, számolás, nem, vagy alig érti meg az olvasott szöveget, a házi feladatok elvégzéséhez folyamatosan segítségre van szüksége, figyelme gyakran elkalandozik, érdemes elvégezni a felmérést. A játékos felmérést követően egy otthon végezhető, a gyermekre szabott feladatsort kell naponta elvégezni (napi 10 percben), majd kéthetente kontrollra jönni. A kontrollt követően ismét új feladatsort kap a gyermek. A program hatására nagyjából 4-6 hónap alatt jelentkezhetnek az első eredmények, de nyilván ez a gyakorlás mennyiségétől és minőségétől függ. A program csak magyar nyelven beszélő, magyarul tanuló gyermekek számára elérhető és csak fizikai jelenléttel.",
-    "ro": "<strong>Acest serviciu este disponibil exclusiv în limba maghiară.</strong>",
-    "en": "<strong>This service is only available in Hungarian.</strong>"
+    "hu": "Ha gyermeke nehezen boldogul az olvasással, írással, számolással, figyelme könnyen elterelődik, vagy a tanulás az átlagosnál több erőfeszítést igényel számára, érdemes feltárni, hogy állhat-e részképességbeli elmaradás vagy tanulási zavar a háttérben.<br><br>A felmérés célja a gyermek erősségeinek és nehézségeinek megismerése, valamint egy személyre szabott fejlesztési terv kialakítása. A fejlesztés játékos feladatokra épül, és a szülők aktív közreműködésével, otthoni gyakorlással valósul meg.<br><br>A szolgáltatás elsősorban olyan iskoláskorú gyermekek számára ajánlott, akik már biztosan ismerik a betűket, és magyar nyelven tanulnak.<br><br>A felmérés és a fejlesztés kizárólag személyes jelenléttel érhető el.",
+    "ro": "Dacă copilul dumneavoastră întâmpină dificultăți la citit, scris sau calcul, dacă atenția îi este ușor distrasă sau dacă învățarea îi solicită un efort mai mare decât cel obișnuit, merită să se analizeze dacă în spatele acestor probleme se ascunde o întârziere în dezvoltarea unor abilități specifice sau o tulburare de învățare.<br><br>Scopul evaluării este identificarea punctelor forte și a dificultăților copilului, precum și elaborarea unui plan de dezvoltare personalizat. Dezvoltarea se bazează pe sarcini ludice și se realizează cu participarea activă a părinților și prin exerciții efectuate acasă.<br><br>Serviciul este recomandat în primul rând copiilor de vârstă școlară care cunosc deja literele și învață în limba maghiară.<br><br>Evaluarea și programul de dezvoltare sunt disponibile exclusiv în cadrul unor ședințe față în față.",
+    "en": "If your child struggles with reading, writing, or math; gets easily distracted; or finds that learning requires more effort than average, it is worth exploring whether a specific learning disability or learning disorder might be the underlying cause.<br><br>The purpose of the assessment is to identify the child's strengths and challenges and to develop a personalized development plan. The program is based on playful activities and is implemented with the active involvement of parents and through practice at home.<br><br>This service is primarily recommended for school-age children who are already familiar with the alphabet and are learning in Hungarian.<br><br>The assessment and development program are available exclusively in person."
   },
   "service_sindelar_duration": {
     "hu": "Felmérés: 90 perc/alkalom | Kontroll: 50 perc/alkalom",
@@ -232,19 +237,19 @@
     "en": "Price:"
   },
   "service_group_meta": {
-    "hu": "Csoport pszichoterápia – Dr. Jánosi Dalma",
-    "ro": "Psihoterapie de grup – Dr. Jánosi Dalma",
-    "en": "Group psychotherapy – Dr. Dalma Jánosi"
+    "hu": "Csoportterápia – Dr. Jánosi Dalma",
+    "ro": "Terapia de grup – Dr. Jánosi Dalma",
+    "en": "Group Therapy – Dr. Dalma Jánosi"
   },
   "service_group_title": {
-    "hu": "Csoport pszichoterápia",
-    "ro": "Psihoterapie de grup",
-    "en": "Group psychotherapy"
+    "hu": "Csoportterápia",
+    "ro": "Terapia de grup",
+    "en": "Group Therapy"
   },
   "service_group_p1": {
-    "hu": "A csoportos pszichoterápia célja, hogy a résztvevők egy támogató, biztonságos közegben tapasztalhassák meg saját működésüket, érzéseiket és viselkedésüket másokéhoz viszonyítva. A csoport leképezi kicsiben a társadalmat és lehetőséget ad a visszajelzésre, az önreflexióra, a szociális készségek gyakorlására, valamint a kapcsolati minták felismerésére és módosítására. A folyamat során a résztvevők megtanulhatják a hatékony kommunikációt, a konfliktuskezelést, a stressz- és szorongáscsökkentő stratégiák alkalmazását, és erősödhet az érzelmi támogatottság érzése, ami hozzájárul a személyes növekedéshez és a hosszú távú változásokhoz.",
-    "ro": "Scopul psihoterapiei de grup este ca participanții să își poată experimenta propria funcționare, emoțiile și comportamentele într-un mediu sigur și susținător, comparativ cu cele ale celorlalți. Grupul reflectă societatea în miniatură și oferă oportunitatea de a primi feedback, de a practica auto-reflecția, abilitățile sociale și de a recunoaște și modifica tiparele relaționale. În cadrul procesului terapeutic, participanții pot învăța comunicarea eficientă, gestionarea conflictelor, aplicarea strategiilor de reducere a stresului și anxietății, și se poate consolida sentimentul de susținere emoțională, ceea ce contribuie la dezvoltarea personală și la schimbări durabile pe termen lung.",
-    "en": "The goal of group psychotherapy is to allow participants to experience their own functioning, emotions, and behaviors in a safe and supportive environment, in relation to others. The group mirrors society on a small scale and provides opportunities for feedback, self-reflection, practicing social skills, and recognizing and modifying relational patterns. During the therapeutic process, participants can learn effective communication, conflict management, stress- and anxiety‑reduction strategies, and strengthen their sense of emotional support, which contributes to personal growth and long‑term, sustainable change."
+    "hu": "Sok nehézségünkkel nem vagyunk egyedül, mégis gyakran úgy érezhetjük, hogy csak mi küzdünk bizonyos problémákkal vagy érzésekkel. A csoportban megtapasztalhatja, hogy mások hogyan küzdenek meg hasonló élethelyzetekkel, miközben saját működésére, kapcsolataira és erőforrásaira is ráláthat. A résztvevők visszajelzései segíthetik az önismeret mélyülését, a kapcsolati minták felismerését és a személyes fejlődést.<br><br>A csoport különösen hasznos lehet többek között:<ul><li>önismereti célok esetén,</li><li>kapcsolati és kommunikációs nehézségek esetén,</li><li>szorongás vagy stressz kezelésében,</li><li>önbizalom erősítésében,</li><li>élethelyzeti változások vagy krízisek feldolgozásában,</li><li>a társas kapcsolatok fejlesztésében.</li></ul>Az aktuálisan induló csoportokról és azok tematikájáról az Időszakos csoportok menüpont alatt tájékozódhat.",
+    "ro": "Nu suntem singuri în fața multor dificultăți, și totuși adesea putem avea senzația că doar noi ne confruntăm cu anumite probleme sau sentimente. În cadrul grupului, veți putea observa cum se descurcă alții cu situații de viață similare, în timp ce veți putea să vă analizați propriul mod de funcționare, relațiile și resursele personale. Feedback-ul participanților vă poate ajuta să vă aprofundați cunoașterea de sine, să recunoașteți tiparele relaționale și să vă dezvoltați personal.<br><br>Grupul poate fi deosebit de util, printre altele:<ul><li>în cazul obiectivelor legate de cunoașterea de sine,</li><li>în cazul dificultăților de relaționare și comunicare,</li><li>în gestionarea anxietății sau a stresului,</li><li>în consolidarea încrederii în sine,</li><li>în procesarea schimbărilor de situație sau a crizelor,</li><li>în dezvoltarea relațiilor sociale.</li></ul>Puteți afla informații despre grupurile care se lansează în prezent și despre tematicile acestora în secțiunea Grupuri periodice.",
+    "en": "We are not alone in facing many of our difficulties, yet we often feel as though we are the only ones struggling with certain problems or feelings. In a group setting, you can see how others cope with similar life situations, while also gaining insight into your own behavior, relationships, and resources. Feedback from participants can help deepen self-awareness, recognize relationship patterns, and foster personal growth.<br><br>The group can be particularly helpful in the following situations, among others:<ul><li>for self-awareness goals,</li><li>when dealing with relationship and communication difficulties,</li><li>in managing anxiety or stress,</li><li>in building self-confidence,</li><li>in coping with life changes or crises,</li><li>in developing social relationships.</li></ul>You can find information about currently starting groups and their topics under the \"Temporary Groups\" menu item."
   },
   "service_group_duration": {
     "hu": "90 perc",
@@ -272,9 +277,9 @@
     "en": "Couple and Family Therapy"
   },
   "service_couples_p1": {
-    "hu": "Rendszerszemléletű terapeutaként a párt vagy a családot egymással kölcsönhatásban álló rendszerként szemlélem, ahol az egyéni nehézségek gyakran a kapcsolati működés tüneteiként jelennek meg. A terápiás folyamat során a hangsúly a kommunikációs minták, szerepek, határok és visszatérő konfliktusok feltérképezésén van, valamint azon erőforrások megerősítésén, amelyek segíthetik a kapcsolat újraszerveződését. A közös munka célja lehet a kapcsolat megerősítése és újradefiniálása, a megértés elmélyítése, a kapcsolati biztonság növelése és olyan változások elindítása, amelyek hosszú távon is támogatóbb, kiegyensúlyozottabb működést tesznek lehetővé. A terápia célja ugyanakkor az is lehet, hogy a felek tisztábban lássák, együtt folytatható-e a kapcsolat, illetve – amennyiben a különválás mellett döntenek – támogatást kapjanak abban, hogyan közöljék a válás tényét a gyermekekkel úgy, hogy az számukra a lehető legkevesebb érzelmi sérüléssel járjon. A folyamat során kiemelt figyelmet kap a gyermekek érzelmi biztonságának megőrzése és a szülői együttműködés erősítése a változó családi helyzetben.",
-    "ro": "Ca terapeut de familie sistemică, privesc cuplul sau familia ca un sistem aflat în interacțiune, în cadrul căruia dificultățile individuale se manifestă adesea ca simptome ale funcționării relaționale. În procesul terapeutic, accentul se pune pe identificarea tiparelor de comunicare, a rolurilor, a limitelor și a conflictelor recurente, precum și pe consolidarea resurselor care pot sprijini reorganizarea relației. Scopul procesului terapeutic poate fi întărirea și redefinirea relației, aprofundarea înțelegerii, creșterea siguranței relaționale și inițierea unor schimbări care să permită o funcționare mai echilibrată pe termen lung. În același timp, terapia poate avea ca obiectiv ca părțile implicate să înțeleagă mai clar dacă relația poate continua împreună sau – în cazul în care aleg separarea – să primească sprijin în modul de comunicare a divorțului către copii, astfel încât impactul emoțional asupra acestora să fie cât mai redus. Procesul acordă o atenție deosebită menținerii siguranței emoționale a copiilor și consolidării colaborării parentale în cadrul unei situații familiale în schimbare.",
-    "en": "As a systemic therapist, I view the couple or family as an interacting system, in which individual difficulties often appear as symptoms of relational functioning. In the therapeutic process, the focus is on mapping communication patterns, roles, boundaries, and recurring conflicts, as well as strengthening the resources that can support the reorganization of the relationship. The goal of the therapeutic process may be to strengthen and redefine the relationship, deepen understanding, increase relational security, and initiate changes that allow for more supportive and balanced functioning in the long term. At the same time, therapy may aim to help the parties gain clarity on whether the relationship can continue together, or – if they decide to separate – to receive support in how to communicate the divorce to their children in a way that minimizes emotional harm. The process places special emphasis on maintaining the children's emotional security and strengthening parental cooperation in the context of a changing family situation."
+    "hu": "A pár- és családterápia lehetőséget teremt arra, hogy biztonságos keretek között közösen tekintsünk rá a nehézségekre, jobban megértsük egymás nézőpontját, és új megoldásokat találjunk a visszatérő problémákra.<br><br>Fordulhatnak hozzám többek között:<ul><li>gyakori konfliktusok, veszekedések esetén,</li><li>kommunikációs nehézségek esetén,</li><li>eltávolodás vagy bizalomvesztés esetén,</li><li>gyermekneveléssel kapcsolatos nézetkülönbségek miatt,</li><li>mozaikcsaládok kialakulásakor,</li><li>életciklusváltások idején (gyermek születése, kirepülése, költözés, pályaváltás),</li><li>családi krízisek vagy veszteségek esetén,</li><li>válás vagy különválás után.</li></ul>",
+    "ro": "Terapia de cuplu și de familie oferă posibilitatea de a analiza împreună, într-un cadru sigur, dificultățile cu care vă confruntați, de a înțelege mai bine punctul de vedere al celuilalt și de a găsi soluții noi la problemele recurente.<br><br>Vă stau la dispoziție, printre altele, în următoarele situații:<ul><li>conflicte frecvente, certuri,</li><li>dificultăți de comunicare,</li><li>în caz de îndepărtare sau pierdere a încrederii,</li><li>din cauza diferențelor de opinie legate de creșterea copiilor,</li><li>în cazul formării familiilor reconstituite,</li><li>în perioadele de schimbare a ciclului de viață (nașterea unui copil, plecarea acestuia de acasă, mutarea, schimbarea carierei),</li><li>în cazul crizelor familiale sau al pierderilor,</li><li>după divorț sau separare.</li></ul>",
+    "en": "Couples and family therapy provides a safe space where we can examine difficulties together, better understand each other's perspectives, and find new solutions to recurring problems.<br><br>You can turn to me for help with, among other things:<ul><li>frequent conflicts or arguments,</li><li>communication difficulties,</li><li>when you're drifting apart or have lost trust,</li><li>disagreements about parenting,</li><li>when blended families are forming,</li><li>during life transitions (birth of a child, a child leaving home, moving, career change),</li><li>in the event of family crises or losses,</li><li>after divorce or separation.</li></ul>"
   },
   "service_couples_p2": {
     "hu": "",
@@ -292,9 +297,9 @@
     "en": "90 minutes/session"
   },
   "service_couples_price": {
-    "hu": "270 lej/alkalom",
-    "ro": "270 de lei/ședință",
-    "en": "270 lei/session"
+    "hu": "300 lej/alkalom",
+    "ro": "300 lei/ședință",
+    "en": "300 lei/session"
   },
   "service_couples_desc": {
     "hu": "Rendszerszemléletű támogatás párok és családok számára.",
@@ -302,24 +307,24 @@
     "en": "Systemic support for couples and families."
   },
   "service_individual_meta": {
-    "hu": "Egyéni pszichoterápia – Dr. Jánosi Dalma",
-    "ro": "Psihoterapie individuală – Dr. Jánosi Dalma",
-    "en": "Individual psychotherapy – Dr. Dalma Jánosi"
+    "hu": "Egyéni terápia – Dr. Jánosi Dalma",
+    "ro": "Terapie individuală – Dr. Jánosi Dalma",
+    "en": "Individual Therapy – Dr. Dalma Jánosi"
   },
   "service_individual_title": {
-    "hu": "Egyéni pszichoterápia",
-    "ro": "Psihoterapie individuală",
-    "en": "Individual psychotherapy"
+    "hu": "Egyéni terápia",
+    "ro": "Terapie individuală",
+    "en": "Individual Therapy"
   },
   "service_individual_p1": {
-    "hu": "Rendszerszemléletű családterápiában képződtem, ami azt jelenti, hogy az egyéni pszichoterápiás folyamat esetén is rendszerszemléletben gondolkodom. Ennek az értelmezési keretnek központi eleme az, hogy a megjelenő probléma, elakadás nem elszigetelten jelenik meg, hanem gyakorta a kapcsolati háló, a családi és tágabb szociális környezet összefüggésében értelmezhető. A közös munka során figyelembe vesszük azokat a mintázatokat, kölcsönhatásokat és erőforrásokat, amelyek hatással vannak a működésedre, és amelyek mentén a változás is elindulhat.",
-    "ro": "M-am format în psihoterapie familială sistemică, așadar și în cadrul procesului de psihoterapie individuală folosesc perspectiva sistemică. Un element central al acestui cadru de interpretare este faptul că problema sau blocajul care apare nu se manifestă izolat, ci poate fi înțeles, de cele mai multe ori, în contextul rețelei relaționale, al familiei și al mediului social mai larg. În cadrul procesului psihoterapeutic luăm în considerare tiparele, interacțiunile și resursele care influențează funcționarea ta și de-a lungul cărora se poate iniția schimbarea.",
-    "en": "I am trained in systemic family therapy, which means that I also approach individual psychotherapy from a systemic perspective. A central element of this framework is the understanding that presenting problems or blockages do not occur in isolation, but can often be understood within the context of relational networks, family dynamics, and the broader social environment. Throughout our work together, we take into account the patterns, interactions, and resources that influence your functioning and along which change can begin to unfold."
+    "hu": "Az egyéni terápia biztonságos és elfogadó teret nyújt ahhoz, hogy jobban megértsük önmagunkat, a nehézségeink hátterét, és megtaláljuk a számunkra megfelelő megoldásokat.<br><br>Fordulhatnak hozzám többek között:<ul><li>szorongás, stressz vagy tartós feszültség esetén,</li><li>hangulati nehézségekkel,</li><li>életvezetési elakadásokkal,</li><li>krízishelyzetekben,</li><li>kiégés (burnout) esetén,</li><li>pályaváltással vagy munkahelyi nehézségekkel kapcsolatban,</li><li>önismereti és személyiségfejlődési célokkal,</li><li>családi vagy kapcsolati problémákkal,</li><li>külföldre költözés, beilleszkedés vagy hazatérés kihívásaival,</li><li>gyermekneveléssel kapcsolatos kérdésekkel.</li></ul>Munkám során rendszerszemléletben gondolkodom, vagyis nemcsak a problémára, hanem annak kapcsolati és élethelyzeti összefüggéseire is figyelek.",
+    "ro": "Terapia individuală oferă un spațiu sigur și primitor care ne permite să ne înțelegem mai bine pe noi înșine, să descoperim cauzele dificultăților noastre și să găsim soluțiile potrivite pentru noi.<br><br>Mă pot consulta, printre altele, persoanele care se confruntă cu:<ul><li>anxietate, stres sau tensiune prelungită,</li><li>dificultăți legate de starea de spirit,</li><li>blocaje în ceea ce privește stilul de viață,</li><li>situații de criză,</li><li>epuizare profesională (burnout),</li><li>schimbarea carierei sau dificultăți la locul de muncă,</li><li>scopuri de cunoaștere de sine și dezvoltare personală,</li><li>probleme familiale sau de cuplu,</li><li>provocările legate de mutarea în străinătate, integrarea sau întoarcerea acasă,</li><li>aspecte legate de creșterea copiilor.</li></ul>În activitatea mea, adopt o abordare sistemică, adică nu mă concentrez doar asupra problemei, ci iau în considerare și contextul relațional și situația de viață în care aceasta se înscrie.",
+    "en": "Individual therapy provides a safe and accepting space to better understand ourselves, the underlying causes of our difficulties, and to find solutions that work for us.<br><br>You can turn to me for help with, among other things:<ul><li>anxiety, stress, or chronic tension,</li><li>mood-related difficulties,</li><li>life challenges,</li><li>crisis situations,</li><li>burnout,</li><li>career changes or workplace difficulties,</li><li>self-awareness and personal development goals,</li><li>family or relationship problems,</li><li>the challenges of moving abroad, adjusting to a new environment, or returning home,</li><li>issues related to parenting.</li></ul>In my work, I take a systemic approach, meaning I focus not only on the problem itself but also on its connections to relationships and life circumstances."
   },
   "service_individual_p2": {
-    "hu": "A terápiás folyamatban kognitív viselkedésterápiás elemeket is használok, például szorongás, stressz, obszeszív-kompulzív zavarok esetén, melyben előbb az a lényeg, hogy megtanuld kontrollálni a tüneteket és a belső feszültséget, majd fokozatosan megértsd azokat a gondolkodási mintákat és viselkedéseket, amelyek fenntartják a nehézségeket. A cél nem csupán a tünetek enyhítése, hanem az önreflexió erősítése, a rugalmasabb megküzdési stratégiák kialakítása és a mindennapi működésed javítása, a számodra értelmes és megélhető változás érdekében.",
-    "ro": "În procesul terapeutic folosesc și elemente de terapie cognitiv-comportamentală, de exemplu în cazul anxietății, stresului sau al tulburărilor obsesiv-compulsive, unde primul pas este învățarea controlului simptomelor, urmată de înțelegerea treptată a tiparelor de gândire și a comportamentelor care mențin dificultățile. Scopul nu este doar reducerea simptomelor, ci și consolidarea auto-reflecției, dezvoltarea unor strategii de coping mai flexibile și îmbunătățirea funcționării tale cotidiene, în vederea unei schimbări semnificative și trăite ca atare de tine.",
-    "en": "In the therapeutic process, I also use elements of cognitive-behavioral therapy, for example in cases of anxiety, stress, or obsessive-compulsive disorders. In these situations, the initial focus is on learning to manage symptoms and internal tension, followed by gradually understanding the thought patterns and behaviors that maintain the difficulties. The goal is not merely symptom reduction, but also the strengthening of self-reflection, the development of more flexible coping strategies, and the improvement of everyday functioning, in order to support meaningful and sustainable change for you."
+    "hu": "",
+    "ro": "",
+    "en": ""
   },
   "service_individual_p3": {
     "hu": "",
@@ -332,14 +337,14 @@
     "en": "50 minutes/session"
   },
   "service_individual_price": {
-    "hu": "180 lej/alkalom",
-    "ro": "180 lei/ședință",
-    "en": "180 lei/session"
+    "hu": "200 lej/alkalom",
+    "ro": "200 lei/ședință",
+    "en": "200 lei/session"
   },
   "service_individual_desc": {
-    "hu": "Rendszerszemléletű terápia egyéni nehézségek feldolgozására.",
-    "ro": "Terapie sistemică pentru procesarea dificultăților individuale.",
-    "en": "Systemic therapy for processing individual difficulties."
+    "hu": "Biztonságos tér önmagad jobb megismeréséhez és a nehézségeid feldolgozásához.",
+    "ro": "Spațiu sigur pentru cunoașterea de sine și procesarea dificultăților.",
+    "en": "A safe space for self-understanding and processing your difficulties."
   },
   "service_psych_meta": {
     "hu": "Egyéni tanácsadás – Dr. Jánosi Dalma",
@@ -380,5 +385,40 @@
     "hu": "Rövid folyamat aktuális élethelyzeti nehézségekhez, döntéshelyzetekhez.",
     "ro": "Proces scurt pentru dificultăți actuale și situații decizionale.",
     "en": "Short-term process for current life challenges and decision-making."
+  },
+  "service_children_meta": {
+    "hu": "Gyermekfoglalkozások – Dr. Jánosi Dalma",
+    "ro": "Grupuri de copii – Dr. Jánosi Dalma",
+    "en": "Children's Groups – Dr. Dalma Jánosi"
+  },
+  "service_children_title": {
+    "hu": "Gyermekfoglalkozások",
+    "ro": "Grupuri de copii",
+    "en": "Children's Groups"
+  },
+  "service_children_p1": {
+    "hu": "A gyermekcsoportok elsősorban azoknak a gyermekeknek nyújthatnak támogatást, akik szeretnének magabiztosabban kapcsolódni társaikhoz, fejleszteni szociális készségeiket, vagy egy elfogadó közösségben új élményeket és tapasztalatokat szerezni.<br><br>A gyermekek számára a játék és a mese a világ megértésének természetes eszköze. A csoportos foglalkozások biztonságos, támogató közegben teremtenek lehetőséget arra, hogy a résztvevők fejlődjenek érzelmi, társas és kommunikációs készségeikben, miközben élményekkel gazdagodnak és új kapcsolatokat alakítanak ki.<br><br>A csoportok tematikája életkortól és céltól függően változhat. Az aktuálisan induló foglalkozásokról, korosztályokról és időpontokról az Időszakos csoportok menüpont alatt tájékozódhat.",
+    "ro": "Grupurile de copii pot oferi sprijin în primul rând copiilor care doresc să interacționeze cu mai multă încredere cu colegii lor, să-și dezvolte abilitățile sociale sau să acumuleze noi experiențe într-o comunitate primitoare.<br><br>Pentru copii, jocul și poveștile reprezintă mijloace naturale de înțelegere a lumii. Activitățile de grup creează, într-un mediu sigur și încurajator, oportunități pentru ca participanții să-și dezvolte abilitățile emoționale, sociale și de comunicare, în timp ce se îmbogățesc cu experiențe și stabilesc noi relații.<br><br>Tematica grupurilor poate varia în funcție de vârstă și de obiectiv. Puteți afla informații despre sesiunile care încep în prezent, grupele de vârstă și orarele disponibile în secțiunea Grupuri periodice.",
+    "en": "Children's groups can primarily offer support to children who want to interact more confidently with their peers, develop their social skills, or gain new experiences in a welcoming community.<br><br>For children, play and stories are natural ways to understand the world. Group activities create opportunities, in a safe and encouraging environment, for participants to develop their emotional, social, and communication skills, while gaining new experiences and forming new relationships.<br><br>Group themes may vary depending on age and objective. You can find information about sessions currently starting, age groups, and available schedules in the \"Temporary Groups\" section."
+  },
+  "service_children_desc": {
+    "hu": "Gyermekek szociális és érzelmi fejlődését támogató csoportfoglalkozások.",
+    "ro": "Activități de grup pentru dezvoltarea socială și emoțională a copiilor.",
+    "en": "Group activities supporting children's social and emotional development."
+  },
+  "nav_periodic_page_title": {
+    "hu": "Időszakos csoportok – Dr. Jánosi Dalma",
+    "ro": "Grupuri periodice – Dr. Jánosi Dalma",
+    "en": "Temporary Groups – Dr. Dalma Jánosi"
+  },
+  "nav_periodic_heading": {
+    "hu": "Időszakos csoportok",
+    "ro": "Grupuri periodice",
+    "en": "Temporary Groups"
+  },
+  "nav_periodic_p1": {
+    "hu": "Ezen az oldalon találja az aktuálisan induló vagy tervezett csoportok részleteit – tematikájukat, korosztályukat, időpontjaikat és a jelentkezés módját.<br><br>Hamarosan részletes információk érhetők el az induló csoportokról. Érdeklődés esetén keressen bizalommal az elérhetőségeim egyikén.",
+    "ro": "Pe această pagină găsiți detalii despre grupurile care pornesc sau sunt planificate în prezent – tematicile, grupele de vârstă, programele și modul de înscriere.<br><br>În curând vor fi disponibile informații detaliate despre grupurile care urmează să înceapă. În caz de interes, nu ezitați să mă contactați.",
+    "en": "On this page you will find details about currently starting or planned groups — their themes, age groups, schedules, and how to register.<br><br>Detailed information about upcoming groups will be available soon. If you are interested, feel free to reach out via any of my contact details."
   }
 }
