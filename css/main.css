@@ -157,6 +157,17 @@ html {
   text-justify: inter-word;
 }
 
+.left ul {
+  padding-left: 1.5rem;
+  margin: 0.75rem 0 1.5rem;
+}
+
+.left ul li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 0.4rem;
+}
+
 /* Info-box h3 stílus */
 .info-box h3 {
   font-family: "Poppins", sans-serif;
