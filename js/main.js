@@ -764,6 +764,14 @@ const SERVICES = [
   { titleKey: 'service_sindelar_title',  descKey: 'service_sindelar_desc',  img: 'images/service-sindelar.jpg',      url: 'service/sindelar-therapy.html' },
 ];
 
+function preloadServiceImages() {
+  const bp = getBasePath();
+  SERVICES.forEach(s => {
+    const img = new Image();
+    img.src = bp + s.img;
+  });
+}
+
 function initServicesBook() {
   const bookLeft     = document.getElementById('bookLeft');
   const bookRightBg  = document.getElementById('bookRightBg');
@@ -793,7 +801,7 @@ function initServicesBook() {
     if (!s) { el.innerHTML = ''; return; }
     el.innerHTML = `
       <div class="book-page-inner">
-        <img src="${bp}${s.img}" alt="" loading="lazy">
+        <img src="${bp}${s.img}" alt="">
         <h3 data-key="${s.titleKey}"></h3>
         <p data-key="${s.descKey}"></p>
         <a href="${bp}${s.url}" class="btn btn-secondary" data-key="service_more">Bővebben</a>
@@ -909,7 +917,7 @@ function initServicesCardStack() {
     const s = SERVICES[svcIdx];
     cardEls[elIdx].dataset.svcIdx = String(svcIdx);
     cardEls[elIdx].innerHTML = `
-      <img src="${bp}${s.img}" alt="" loading="lazy">
+      <img src="${bp}${s.img}" alt="">
       <div class="svc-card-body">
         <h3 data-key="${s.titleKey}"></h3>
         <p data-key="${s.descKey}"></p>
@@ -1097,6 +1105,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initHeaderScroll();
   initHeroKenBurns();
   initScrollReveal();
+  preloadServiceImages();
   initServicesBook();
   initServicesCardStack();
   initVideoCarousel();
