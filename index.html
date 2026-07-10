@@ -9,7 +9,6 @@
   
   <!-- Resource Hints for Performance -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
@@ -223,6 +222,13 @@
 
       <div class="form-row">
         <textarea name="message" rows="5" data-key-placeholder="form_message" required aria-label="Üzenet"></textarea>
+      </div>
+
+      <div class="form-row">
+        <label class="gdpr-consent">
+          <input type="checkbox" name="gdpr" required>
+          <span data-key="form_gdpr_consent">Elolvastam és elfogadom az <a href="adatkezeles.html" target="_blank">adatkezelési tájékoztatót</a>, és hozzájárulok adataim kezeléséhez.</span>
+        </label>
       </div>
 
       <div class="form-row">

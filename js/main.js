@@ -591,27 +591,13 @@ function renderRelatedPosts(allPosts, currentPost, basePath) {
 }
 
 /* ---------------------------------------------------
-   CONTACT FORM
+   CONTACT FORM (Formspree)
 --------------------------------------------------- */
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mykqrdwe";
+
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
-  let emailJSLoaded = false;
-
-  const loadEmailJS = () => {
-    if (emailJSLoaded) return;
-    
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-    script.onload = () => {
-      emailjs.init("_Rq7FAjiXz4lWprzY");
-      emailJSLoaded = true;
-    };
-    document.head.appendChild(script);
-  };
-
-  contactForm.addEventListener('focus', loadEmailJS, { once: true, capture: true });
-
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -620,33 +606,31 @@ if (contactForm) {
       return;
     }
 
-    if (!emailJSLoaded) {
-      alert("Kérlek várj egy pillanatot...");
-      loadEmailJS();
-      setTimeout(() => contactForm.requestSubmit(), 1000);
-      return;
-    }
-
-    const fullName = this.lastname.value + " " + this.firstname.value;
     const submitBtn = this.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
-    
+
     submitBtn.innerHTML = '<span class="loading"></span> Küldés...';
     submitBtn.disabled = true;
 
-    emailjs.send("service_wlz0mh8", "template_htc2v29", {
-      name: fullName,
-      email: this.email.value,
-      phone: this.phone.value || "Nincs megadva",
-      message: this.message.value
+    const data = new FormData(this);
+    data.set("name", this.lastname.value + " " + this.firstname.value);
+
+    fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: data
     })
-    .then(() => {
-      alert("Köszönöm! Az üzenet sikeresen elküldve.");
-      this.reset();
+    .then(res => {
+      if (res.ok) {
+        alert("Köszönöm! Az üzenet sikeresen elküldve.");
+        this.reset();
+      } else {
+        return res.json().then(body => { throw body; });
+      }
     })
     .catch((err) => {
       alert("Hiba történt az üzenet küldésekor. Kérlek próbáld újra!");
-      console.error("❌ EmailJS error:", err);
+      console.error("❌ Formspree error:", err);
     })
     .finally(() => {
       submitBtn.textContent = originalText;
