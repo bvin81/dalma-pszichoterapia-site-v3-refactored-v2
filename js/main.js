@@ -89,10 +89,6 @@ function getCurrentLang() {
 }
 
 function setLangCookie(lang) {
-  const expires = new Date();
-  expires.setFullYear(expires.getFullYear() + 1);
-  document.cookie = `lang=${lang};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
-  
   try {
     localStorage.setItem('lang', lang);
   } catch (e) {
