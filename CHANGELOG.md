@@ -2,6 +2,11 @@
 
 ## 2026-07-11
 
+### Cookie eltávolítva
+- `document.cookie` eltávolítva `js/main.js`-ből
+- A nyelv mostantól kizárólag `localStorage`-ban tárolódik
+- Cookie consent banner szükségtelenné vált
+
 ### Adatkezelési tájékoztató – román és angol fordítás
 - A tájékoztató törzse bekerült a `lang.json`-ba mindhárom nyelven (hu/ro/en)
 - Nyelvváltáskor automatikusan vált a tartalom
